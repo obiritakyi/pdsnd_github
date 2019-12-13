@@ -13,11 +13,11 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-CITIES = ['chicago', 'washington','new york city']  
+CITIES = ['chicago', 'washington','new york city']
 
 DAYS = ['all', 'monday', 'tuesday','wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
-MONTHS = ['all', 'january', 'febuary', 'march', 'april', 'may', 'june']  
+MONTHS = ['all', 'january', 'febuary', 'march', 'april', 'may', 'june']
 
 def get_filters():
     """
@@ -36,17 +36,17 @@ def get_filters():
             break
 
     # get user input for month (all, january, february, ... , june)
-    while True:    
+    while True:
         month = input('Now select a month to explore. \n Bikeshare data is available form January to June.\n> ')
         if month in MONTHS:
             break
-        
+
         # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day = input('Lastly, type any day of the week you want to explore. \n(e.g. all, tuesday, friday) \n> ')
         if day in DAYS:
             break
-        
+
     print('-'*40)
     return city, month, day
 
@@ -80,7 +80,7 @@ def load_data(city, month, day):
     #filter by day of the week
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
-        
+
 
     return df
 
@@ -90,8 +90,8 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
-    
+
+
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -130,7 +130,7 @@ def station_stats(df):
 
     # display most frequent combination of start station and end station trip
     most_common_start_end_station = df[['Start Station', 'End Station']].mode().loc[0]
-    print("The most commonly used start station and end station : {}, {}"\
+    print("The most frequently used start station and end station : {}, {}"\
             .format(most_common_start_end_station[0], most_common_start_end_station[1]))
 
 
@@ -172,7 +172,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
+
         yes = input('\nWould you like to restart and explore further? Type \'yes\' or \'no\'\n> ')
         if yes.lower() != 'yes':
             break
