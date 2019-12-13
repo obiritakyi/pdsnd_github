@@ -43,7 +43,7 @@ def get_filters():
 
         # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input('Lastly, type any day of the week you want to explore. \n(e.g. all, tuesday, friday) \n> ')
+        day = input('Lastly, type any day of the week you want to explore. \n(e.g. all, monday, tuesday, friday) \n> ')
         if day in DAYS:
             break
 
@@ -130,7 +130,7 @@ def station_stats(df):
 
     # display most frequent combination of start station and end station trip
     most_common_start_end_station = df[['Start Station', 'End Station']].mode().loc[0]
-    print("The most commonly used start station and end station : {}, {}"\
+    print("The most frequently used start station and end station : {}, {}"\
             .format(most_common_start_end_station[0], most_common_start_end_station[1]))
 
 
