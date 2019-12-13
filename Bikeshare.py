@@ -31,7 +31,7 @@ def get_filters():
     print('Hello Friend! Join me and Let\'s explore some data on US bikeshare!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
-        city = input('which city do you want us to start with Chicago, New York or Washington? \n>').lower()
+        city = input('which city do you want us to start with Chicago, New York city or Washington? \n>').lower()
         if city in CITIES:
             break
 
