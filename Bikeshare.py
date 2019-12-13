@@ -31,7 +31,11 @@ def get_filters():
     print('Hello Friend! Join me and Let\'s explore some data on US bikeshare!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
+<<<<<<< HEAD
         city = input('which city do you want us to start with New York City, Chicago or Washington? \n>').lower()
+=======
+        city = input('which city do you want us to start with Chicago, New York city or Washington? \n>').lower()
+>>>>>>> 4a36f7df4372237c71d4cccb970654c24aa1800d
         if city in CITIES:
             break
 
@@ -97,17 +101,17 @@ def time_stats(df):
 
     # display the most common month
     Most_common_month = df['month'].value_counts().idxmax()
-    print("The most common month is :", Most_common_month)
+    print("The most frequent month is :", Most_common_month)
 
 
     # display the most common day of week
     Most_common_day_of_week = df['day_of_week'].value_counts().mode()
-    print("The most common day of the week is :", Most_common_day_of_week)
+    print("The most frequent day of the week is :", Most_common_day_of_week)
 
 
     # display the most common start hour
     most_common_start_hour = df['hour'].value_counts().idxmax()
-    print("The most common start hour is :", most_common_start_hour)
+    print("The most frequent start hour is :", most_common_start_hour)
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
