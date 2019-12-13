@@ -102,12 +102,12 @@ def time_stats(df):
 
     # display the most common day of week
     Most_common_day_of_week = df['day_of_week'].value_counts().mode()
-    print("The most common day of the week is :", Most_common_day_of_week)
+    print("The most frequent day of the week is :", Most_common_day_of_week)
 
 
     # display the most common start hour
     most_common_start_hour = df['hour'].value_counts().idxmax()
-    print("The most common start hour is :", most_common_start_hour)
+    print("The most frequent start hour is :", most_common_start_hour)
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
